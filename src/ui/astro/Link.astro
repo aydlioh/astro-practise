@@ -1,0 +1,16 @@
+---
+interface Props {
+  href: string;
+  className?: string;
+  target?: string;
+}
+
+const { href, className, target } = Astro.props;
+---
+
+<a
+  target={target}
+  href={href}
+  class={`relative text-accent after:absolute after:-bottom-1 after:left-1/2 after:h-1 after:w-0 after:bg-accent after:duration-300 hover:after:left-0 hover:after:w-full ${className}`}
+  ><slot /></a
+>

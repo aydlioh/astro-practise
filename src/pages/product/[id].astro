@@ -1,0 +1,28 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Product } from '../../modules/Product';
+import { getProducts } from '../../modules/Product';
+import type { IProduct } from '../../modules/Product/models';
+
+export const getStaticPaths = async () => {
+  const products = await getProducts();
+
+  return products.map((product) => ({
+    params: { id: product.id.toString() },
+    props: { product },
+  }));
+};
+
+interface Props {
+  product: IProduct;
+}
+
+const { id } = Astro.params;
+const { product } = Astro.props;
+---
+
+<Layout title={`Product ${id}`}>
+  <section class="container mx-auto mb-32 mt-32 px-6">
+    <Product product={product} />
+  </section>
+</Layout>
