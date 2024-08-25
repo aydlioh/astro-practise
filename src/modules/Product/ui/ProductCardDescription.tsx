@@ -1,4 +1,4 @@
-import { Chip } from "../../../ui/react";
+import { Chip } from "@/shared/ui/react";
 
 interface Props {
   title: string;

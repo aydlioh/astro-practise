@@ -1,4 +1,4 @@
-import { Chip } from "../../../ui/react";
+import { Chip } from "@/shared/ui/react";
 import type { IProduct } from "../models";
 import { ProductCardDescription } from "./ProductCardDescription";
 import { ProductCardImage } from "./ProductCardImage";

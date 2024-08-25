@@ -1,4 +1,4 @@
-import { Button, Chip } from "../../../ui/react";
+import { Button, Chip } from "@/shared/ui/react";
 import type { IProduct } from "../models";
 import { ProductImages } from "./ProductImages";
 

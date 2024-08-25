@@ -1,16 +1,20 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import { getProducts, ProductCard } from '@/modules/Product';
-import { Title } from '@/ui/astro';
+import { SupermarketIcon } from '@/shared/icons';
+import { Title } from '@/shared/ui/astro';
 
 const products = await getProducts();
 ---
 
 <Layout title="Products Page">
   <section class="container mx-auto mt-20 px-6">
-    <Title className="mb-10">Products Page</Title>
+    <Title className="mb-10 flex flex-row items-center gap-5"
+      >Products Page <SupermarketIcon className="text-4xl text-accent" /></Title
+    >
+
     <ul
-      class="tablet:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-4 large:grid-cols-5 mb-32 grid grid-cols-1 gap-7"
+      class="mb-32 grid grid-cols-1 gap-7 tablet:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-4 large:grid-cols-5"
     >
       {
         products.map((product) => (

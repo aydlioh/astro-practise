@@ -1,10 +1,14 @@
 ---
+import { AstroIcon, SupermarketIcon } from '@/shared/icons';
+import { Link, Title } from '@/shared/ui/astro';
 import Layout from '@/layouts/Layout.astro';
-import { Link, Title } from '@/ui/astro';
 ---
 
 <Layout title="Index Page">
-  <section class="flex h-screen w-full items-center justify-center">
+  <section
+    class="flex h-screen w-full flex-col items-center justify-center gap-10"
+  >
+    <AstroIcon className="text-9xl" />
     <Title>
       Welcome to
       <Link target="_blank" href="https://docs.astro.build/en/getting-started/"
