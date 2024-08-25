@@ -1,8 +1,7 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import { Product } from '../../modules/Product';
-import { getProducts } from '../../modules/Product';
-import type { IProduct } from '../../modules/Product/models';
+import Layout from '@/layouts/Layout.astro';
+import { Product, getProducts } from '@/modules/Product';
+import type { IProduct } from '@/modules/Product';
 
 export const getStaticPaths = async () => {
   const products = await getProducts();

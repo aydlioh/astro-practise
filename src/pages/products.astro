@@ -1,7 +1,7 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { getProducts, ProductCard } from '../modules/Product';
-import { Title } from '../ui/astro';
+import Layout from '@/layouts/Layout.astro';
+import { getProducts, ProductCard } from '@/modules/Product';
+import { Title } from '@/ui/astro';
 
 const products = await getProducts();
 ---
