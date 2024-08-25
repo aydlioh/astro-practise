@@ -1,12 +1,12 @@
 ---
-import { AstroIcon, SupermarketIcon } from '@/shared/icons';
+import { AstroIcon } from '@/shared/icons';
 import { Link, Title } from '@/shared/ui/astro';
 import Layout from '@/layouts/Layout.astro';
 ---
 
 <Layout title="Index Page">
-  <section
-    class="flex h-screen w-full flex-col items-center justify-center gap-10"
+  <main
+    class="h-full flex justify-center items-center flex-col gap-6 text-center"
   >
     <AstroIcon className="text-9xl" />
     <Title>
@@ -15,5 +15,5 @@ import Layout from '@/layouts/Layout.astro';
         >astro.js</Link
       >!
     </Title>
-  </section>
+  </main>
 </Layout>

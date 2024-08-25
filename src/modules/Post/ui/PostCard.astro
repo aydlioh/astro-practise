@@ -1,0 +1,35 @@
+---
+import { Image } from 'astro:assets';
+import { type CollectionEntry } from 'astro:content';
+
+type Props = {
+  post: CollectionEntry<'posts'>;
+};
+
+const { post } = Astro.props;
+---
+
+<article>
+  <a
+    href={`/blog/${post.slug}`}
+    aria-label={`Read more about ${post.data.title}`}
+  >
+    <Image
+      src={post.data.image}
+      alt={post.data.title}
+      width={600}
+      height={600 / 1.5}
+      class="aspect-thumbnail mb-6 rounded-2xl object-cover shadow-xl"
+    />
+  </a>
+  <a
+    href={`/blog/${post.slug}`}
+    class="mb-4 inline-block text-3xl font-semibold text-foreground"
+  >
+    {post.data.title}
+  </a>
+
+  <p class="mb-9 line-clamp-3 text-1xl text-foreground/70">
+    {post.body}
+  </p>
+</article>

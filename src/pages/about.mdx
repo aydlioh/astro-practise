@@ -1,0 +1,70 @@
+import { Button } from "@/shared/ui/react";
+import Layout from "@/layouts/Layout.astro";
+import MDX from "@/components/MDX.astro";
+import { Image } from "astro:assets";
+import { frontendStack, backendStack } from "@/shared/const/github";
+
+<Layout title="About Page">
+<MDX>
+# Hello, I'm Pavel 👋
+
+### Welcome to my GitHub profile!
+
+I'm a 19-year-old frontend developer from **Yekaterinburg**, specializing in modern web technologies 🚀  
+Currently, I’m a student at **IRIT-RTF** 🎓, studying **Software Engineering** 💻  
+I enjoy working on interesting projects and continuously learning new things ⚡⚡⚡
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+<div class="flex flex-row flex-wrap gap-2">
+  {frontendStack.map(({ name, href, src }) => (
+    <a key={name} href={href} target="_blank">
+      <Image
+        width={100}
+        height={40}
+        src={src}
+        alt={name}
+        class="h-auto w-auto rounded-[5px]"
+      />
+    </a>
+  ))}
+</div>
+
+### Backend
+
+<div class="flex flex-row flex-wrap gap-2">
+  {backendStack.map(({ name, href, src }) => (
+    <a key={name} href={href} target="_blank">
+      <Image
+        width={100}
+        height={40}
+        src={src}
+        alt={name}
+        class="h-auto w-auto rounded-[5px]"
+      />
+    </a>
+  ))}
+</div>
+
+## 🔥 GitHub Stats
+
+<div class="flex flex-col items-start gap-2 laptop:flex-row">
+  <img
+    src="https://github-readme-stats.vercel.app/api?username=aydlioh&show_icons=true&theme=radical"
+    alt="Pavel's GitHub Stats"
+  />
+  <img
+    src="https://github-readme-stats.vercel.app/api/top-langs/?username=aydlioh&layout=compact&theme=radical"
+    alt="Top Langs"
+  />
+</div>
+
+## 📫 How to Reach Me
+
+- **Email:** [aydlioh@mail.ru](mailto:aydlioh@mail.ru)
+- **Telegram:** [Pavel's Telegram](https://t.me/pavel_biryuchev)
+
+</MDX>
+</Layout>

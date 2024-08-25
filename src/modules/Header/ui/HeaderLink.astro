@@ -3,9 +3,13 @@ interface Props {
   href: string;
 }
 
+const pathname = new URL(Astro.request.url).pathname;
 const { href } = Astro.props;
+const active = pathname === href;
 ---
 
-<li class="rounded-lg px-3 py-2 duration-200 hover:bg-background">
+<li
+  class={`rounded-lg px-3 py-2 duration-200 hover:bg-background active:text-accent ${active && 'text-accent'}`}
+>
   <a href={href}><slot /></a>
 </li>

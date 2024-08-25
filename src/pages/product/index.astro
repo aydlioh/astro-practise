@@ -1,0 +1,19 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { getProducts, ProductList } from '@/modules/Product';
+import { SupermarketIcon } from '@/shared/icons';
+import { Title } from '@/shared/ui/astro';
+
+const products = (await getProducts()).filter(
+  ({ images }) => images.length > 1
+);
+---
+
+<Layout title="Products Page">
+  <main>
+    <Title className="mb-10 flex flex-row items-center gap-5"
+      >Products Page <SupermarketIcon className="text-4xl text-accent" /></Title
+    >
+    <ProductList client:load products={products} />
+  </main>
+</Layout>
