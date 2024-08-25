@@ -1,5 +1,6 @@
 ---
 import Main from '@/components/Main.astro';
+import MDX from '@/components/MDX.astro';
 import Layout from '@/layouts/Layout.astro';
 import { Title } from '@/shared/ui/astro';
 import { Image } from 'astro:assets';
@@ -18,24 +19,24 @@ interface Props {
   post: CollectionEntry<'posts'>;
 }
 
-const { post } = Astro.props;
+
+const post = Astro.props.post;
+const { title, image } = post.data;
 const { Content } = await post.render();
 ---
 
-<Layout title={post.data.title}>
+<Layout title={title}>
   <Main>
-    <Title>{post.data.title}</Title>
+    <Title>{title}</Title>
     <Image
-      src={post.data.image}
-      alt={post.data.title}
+      src={image}
+      alt={title}
       width={600}
       height={600 / 1.5}
       class="aspect-thumbnail mb-4 rounded-2xl object-cover shadow-xl"
     />
-    <div
-      class="prose prose-h2:text-foreground prose-p:text-foreground/70 relative mb-20 overflow-visible"
-    >
+    <MDX className='!max-w-full'>
       <Content />
-    </div>
+    </MDX>
   </Main>
 </Layout>

@@ -1,3 +1,13 @@
-<main class="mx-auto pt-12 pb-32 mobile:prose prose-sm max-w-5xl prose-headings:text-foreground prose-p:text-foreground/70 prose-strong:text-foreground prose-a:text-accent prose-img:my-0">
+---
+interface Props {
+  className?: string;
+}
+
+const { className } = Astro.props;
+---
+
+<main
+  class={`mobile:prose prose-sm prose-headings:text-foreground prose-p:text-foreground/70 prose-strong:text-foreground prose-a:text-accent prose-img:my-0 mx-auto max-w-5xl pb-32 pt-12 ${className}`}
+>
   <slot />
 </main>
