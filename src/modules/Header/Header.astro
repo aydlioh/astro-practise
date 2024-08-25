@@ -15,7 +15,7 @@ import { Menu } from './ui/Menu';
       <ul class="flex flex-row gap-1 text-2xl">
         {
           links.map(({ href, label }) => {
-            return <HeaderLink href={href}>{label}</HeaderLink>;
+            return <HeaderLink client:load href={href}>{label}</HeaderLink>;
           })
         }
       </ul>

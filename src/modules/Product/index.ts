@@ -1,4 +1,4 @@
 export * from "./api";
 export * from "./models";
-export { ProductList } from "./ui/ProductList";
-export { Product } from "./ui/Product";
+export { default as Product } from "./ui/Product.astro";
+export { default as ProductList } from "./ui/ProductList.astro";
